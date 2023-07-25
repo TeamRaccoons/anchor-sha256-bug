@@ -26,16 +26,18 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Direct js-sha256 digest:{" "}
-          {sha256.digest("account:Organisation").slice(0, 8)}
+          {sha256.digest("account:Organisation").slice(0, 8).toString()}
         </p>
         <p>
           Anchor discriminator{" "}
-          {BorshAccountsCoder.accountDiscriminator("Organisation")}
+          {new Uint8Array(
+            BorshAccountsCoder.accountDiscriminator("Organisation")
+          ).toString()}
         </p>
-        <p>crypto.subtle digest: {webApiDiscriminator}</p>
+        <p>crypto.subtle digest: {webApiDiscriminator?.toString()}</p>
         <p>
           Expected discriminator:{" "}
-          {new Uint8Array([100, 235, 183, 55, 240, 174, 86, 191])}
+          {[100, 235, 183, 55, 240, 174, 86, 191].toString()}
         </p>
       </header>
     </div>
