@@ -32,7 +32,7 @@ function App() {
           Anchor discriminator{" "}
           {BorshAccountsCoder.accountDiscriminator("Organisation")}
         </p>
-        <p>Direct js-sha256 digest: {webApiDiscriminator}</p>
+        <p>crypto.subtle digest: {webApiDiscriminator}</p>
         <p>
           Expected discriminator:{" "}
           {new Uint8Array([100, 235, 183, 55, 240, 174, 86, 191])}
